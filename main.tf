@@ -47,4 +47,8 @@ module "ec2" {
   instance_type = "t2.micro"
   monitoring    = true
   subnet_id     = each.value.subnet_id
+
+  tags = {
+    Owner = data.aws_caller_identity.ctx.account_id
+  }
 }
