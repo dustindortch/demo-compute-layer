@@ -49,6 +49,6 @@ module "ec2" {
   subnet_id     = each.value.subnet_id
 
   tags = {
-    Owner = data.aws_caller_identity.ctx.account_id
+    Owner = data.aws_caller_identity.ctx.user_id
   }
 }
